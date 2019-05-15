@@ -15,9 +15,9 @@ app.use(express.static(path.join(__dirname, 'pvz-client/build')))
 // create a connection to clearDB
 const connection = mysql.createConnection({
 	host: 'us-cdbr-iron-east-02.cleardb.net',
-	user: 'b6743e9503cc64',
-	password: '64d52c9c',
-	database: 'heroku_1cd705bdf114736'
+	user: 'b526e9f9ac39f8',
+	password: 'a0863242',
+	database: 'heroku_a7eb5ba779cdac1'
 })
 
 // connect
