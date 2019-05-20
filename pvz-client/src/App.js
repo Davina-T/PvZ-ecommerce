@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
+import Navbar from './components/Navbar'
+import ProductList from './components/ProductList'
+import Details from './components/Details'
+import Cart from './components/Cart'
+import Default from './components/Default'
+
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
 	state = {
@@ -23,9 +30,11 @@ class App extends Component {
 		const { plants } = this.state
 		return (
 			<div className="App">
-				<header className="App-header">
-					<h1>Plants vs Zombies Shop</h1>
-				</header>
+				<Navbar />
+				<ProductList />
+				<Details />
+				<Cart />
+				<Default />
 
 				{plants.map(this.renderPlant)}
 			</div>

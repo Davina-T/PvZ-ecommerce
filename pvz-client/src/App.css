@@ -1,3 +1,36 @@
+:root {
+	--lightBrown: #fabb69;
+	--mediumBrown: #793103;
+	--darkBrown: #4f1f01;
+	--titleGold: #d3a000;
+	--niceGreen: #add17e;
+	--specialPurple: #b28bde;
+	--textBlue: #28315d;
+	--costRed: #c82811;
+}
+
+body {
+	font-family: 'Lato', sans-serif !important;
+	font-size: 24px !important;
+	color: var(--textBlue) !important;
+	background: var(--lightBrown) !important;
+}
+
+.text-title {
+	font-family: 'Cute Font', cursive;
+	font-size: 32px;
+	color: var(--titleGold);
+	letter-spacing: 0.3rem;
+}
+
+.text-blue {
+	color: var(--textBlue);
+}
+
+.text-red {
+	color: var(--costRed);
+}
+
 .App {
 	text-align: center;
 }
