@@ -1,0 +1,7 @@
+:root {
+	--lightBrown: #fabb69;
+}
+
+.navbar {
+	background-color: var(--lightBrown);
+}

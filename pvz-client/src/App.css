@@ -5,15 +5,16 @@
 	--titleGold: #d3a000;
 	--niceGreen: #add17e;
 	--specialPurple: #b28bde;
-	--textBlue: #28315d;
+	--darkBlue: #28315d;
 	--costRed: #c82811;
+	--textBlack: #000000;
 }
 
 body {
 	font-family: 'Lato', sans-serif !important;
 	font-size: 24px !important;
 	color: var(--textBlue) !important;
-	background: var(--lightBrown) !important;
+	background: white !important;
 }
 
 .text-title {
@@ -24,7 +25,7 @@ body {
 }
 
 .text-blue {
-	color: var(--textBlue);
+	color: var(--textBlack);
 }
 
 .text-red {
