@@ -1,13 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../logo.png';
-import styled from 'styled-components';
-
-import './styles/navbar.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import logo from '../logo.png'
+import styled from 'styled-components'
+import { ButtonContainer } from './Button'
 
 const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-sm navbar-dark px-sm-5">
+		<NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
 			<Link to="/">
 				<img src={logo} alt="store" className="navbar-brand" />
 			</Link>
@@ -26,30 +25,24 @@ const Navbar = () => {
 					My Cart
 				</ButtonContainer>
 			</Link>
-		</nav>
-	);
-};
+		</NavWrapper>
+	)
+}
 
-const ButtonContainer = styled.button`
-	font-size: 1.4rem;
-	background: transparent;
-	border: 0.05rem solid var(--mediumBrown);
-	color: var(--mediumBrown);
-	border-raiuds: 0.5rem;
-	padding: 0.2rem 0.5rem;
-	cursor: pointer;
-	margin: 0.2rem 0.5rem 0.2rem 0;
-	transition: all 0.3s ease-in-out;
+const NavWrapper = styled.nav`
+	background-color: var(--lightBrown);
 
-	&:hover {
-		background: var(--mediumBrown);
-		color: var(--lightBrown);
+	.nav-link {
+		font-family: 'Oswald', sans-serif;
+		letter-spacing: 0.05rem;
+		color: var(--mediumBrown) !important;
+		font-size: 1.3rem;
+		transition: 0.3s ease-out;
+
+		&:hover {
+			color: var(--headingWhite) !important;
+		}
 	}
+`
 
-	&:focus {
-		outline: none;
-	}
-`;
-// https://youtu.be/-edmQKcOW8s?list=PLtLaFrK9hJaAG7rVtcNRCBAQbO5nPc8AZ&t=4217
-
-export default Navbar;
+export default Navbar
