@@ -10,9 +10,16 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
-	state = {
-		plants: []
+	constructor() {
+		super()
+		this.state = {
+			plants: []
+		}
 	}
+
+	// state = {
+	// 	plants: []
+	// }
 
 	componentDidMount() {
 		this.getPlants()
@@ -25,21 +32,27 @@ class App extends Component {
 			.catch((err) => console.error(err))
 	}
 
-	renderPlant = ({ plantID, name }) => <div key={plantID}>{name}</div>
+	renderPlant = ({ plantID, name, description, cost }) => (
+		<div key={plantID}>
+			{name}
+			<br />
+			{description}
+			<br />
+			{cost}
+		</div>
+	)
 
 	render() {
 		const { plants } = this.state
 		return (
 			<div className="App">
 				<Navbar />
-
 				<Switch>
-					<Route exact path="/" component={ProductList} />
+					<Route exact path="/" render={(props) => <ProductList plants={this.state.plants} />} />
 					<Route path="/details" component={Details} />
 					<Route path="/cart" component={Cart} />
 					<Route component={Default} />
 				</Switch>
-
 				{plants.map(this.renderPlant)}
 			</div>
 		)

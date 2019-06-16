@@ -1,11 +1,7 @@
 import React from 'react'
 
-const Product = () => {
-	return (
-		<section className="product-view">
-			<h3>hello from product</h3>
-		</section>
-	)
+const Product = ({ name, description, cost }) => {
+	return <h3>hello from product</h3>
 }
 
 export default Product
