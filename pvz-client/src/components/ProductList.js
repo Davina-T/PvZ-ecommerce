@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Product from './Product'
 import Title from './Title'
+import { ProductConsumer } from '../context'
 
-const ProductList = ({ plants }) => {
+const ProductList = () => {
 	// const products = plants.map((plant) => {
 	// 	// prettier-ignore
 	// 	return (
@@ -19,9 +20,14 @@ const ProductList = ({ plants }) => {
 		<div className="py-5">
 			<div className="container">
 				<Title name="Our" title="Products" />
-				<div className="row" />
+				<div className="row">
+					<ProductConsumer>
+						{(plants) => {
+							return <div>{plants}</div>
+						}}
+					</ProductConsumer>
+				</div>
 			</div>
-			{/* {products} */}
 		</div>
 		// <Product/>
 	)
