@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Product from './Product'
 import Title from './Title'
-import { ProductConsumer } from '../context'
+import { ProductConsumer, ProductContext } from '../context'
 
 const ProductList = () => {
+	const plants = useContext(ProductContext)
 	// const products = plants.map((plant) => {
 	// 	// prettier-ignore
 	// 	return (
@@ -21,11 +22,12 @@ const ProductList = () => {
 			<div className="container">
 				<Title name="Our" title="Products" />
 				<div className="row">
-					<ProductConsumer>
+					<div>{plants}</div>
+					{/* <ProductConsumer>
 						{(plants) => {
 							return <div>{plants}</div>
 						}}
-					</ProductConsumer>
+					</ProductConsumer> */}
 				</div>
 			</div>
 		</div>
