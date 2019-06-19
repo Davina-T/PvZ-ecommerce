@@ -6,7 +6,8 @@ const ProductContext = React.createContext()
 
 class ProductProvider extends Component {
 	state = {
-		plants: []
+		plants: [],
+		detailProduct: []
 	}
 
 	componentDidMount() {
@@ -20,20 +21,31 @@ class ProductProvider extends Component {
 			.catch((err) => console.error(err))
 	}
 
-	renderPlant = ({ plantID, name, description, cost }) => (
-		<div key={plantID}>
-			{name}
-			<br />
-			{description}
-			<br />
-			{cost}
-		</div>
-	)
+	// handleDetail = () => {
+	// 	console.log('Hello from Detail')
+	// }
+
+	// addToCart = () => {
+	// 	console.log('Hello from Add to Cart')
+	// }
+
+	// renderPlant = ({ plantID, name, description, cost }) => (
+	// 	<div key={plantID}>
+	// 		{name}
+	// 		<br />
+	// 		{description}
+	// 		<br />
+	// 		{cost}
+	// 	</div>
+	// )
+
+	// plants.map(this.renderPlant)
 
 	render() {
-		const { plants } = this.state
+		// const { plants } = this.state
 		// prettier-ignore
-		return <ProductContext.Provider value={plants.map(this.renderPlant)}>
+		return <ProductContext.Provider value={this.state.plants}
+				>
                     {this.props.children}
                 </ProductContext.Provider>
 	}
