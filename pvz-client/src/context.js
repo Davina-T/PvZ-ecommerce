@@ -21,13 +21,13 @@ class ProductProvider extends Component {
 			.catch((err) => console.error(err))
 	}
 
-	// handleDetail = () => {
-	// 	console.log('Hello from Detail')
-	// }
+	handleDetail = () => {
+		console.log('Hello from Detail')
+	}
 
-	// addToCart = () => {
-	// 	console.log('Hello from Add to Cart')
-	// }
+	addToCart = () => {
+		console.log('Hello from Add to Cart')
+	}
 
 	// renderPlant = ({ plantID, name, description, cost }) => (
 	// 	<div key={plantID}>
@@ -41,13 +41,21 @@ class ProductProvider extends Component {
 
 	// plants.map(this.renderPlant)
 
+	// handleDetail: this.handleDetail,
+	// addToCart: this.addToCart
+
 	render() {
 		// const { plants } = this.state
 		// prettier-ignore
-		return <ProductContext.Provider value={this.state.plants}
-				>
-                    {this.props.children}
-                </ProductContext.Provider>
+		return <ProductContext.Provider 
+				value={{
+					...this.state,
+					handleDetail: this.handleDetail,
+					addToCart: this.addToCart
+				}}
+			>
+                {this.props.children}
+            </ProductContext.Provider>
 	}
 }
 

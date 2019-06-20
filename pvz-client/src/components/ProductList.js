@@ -1,11 +1,10 @@
-import React, { Component, useContext } from 'react'
+import React, { useContext } from 'react'
 import Product from './Product'
 import Title from './Title'
 import { ProductConsumer, ProductContext } from '../context'
 
 const ProductList = () => {
-	// const plants = useContext(ProductContext)
-	// console.log(plants)
+	// const getPlants = useContext(ProductContext)
 
 	return (
 		<div className="py-5">
@@ -13,9 +12,10 @@ const ProductList = () => {
 				<Title name="Our" title="Products" />
 				<div className="row">
 					{/* <div>{plants}</div> */}
+
 					<ProductConsumer>
-						{(plants) => {
-							return plants.map((plant) => {
+						{(getPlants) => {
+							return getPlants.plants.map((plant) => {
 								return <Product key={plant.plantID} plant={plant} />
 							})
 						}}
@@ -23,7 +23,6 @@ const ProductList = () => {
 				</div>
 			</div>
 		</div>
-		// <Product/>
 	)
 }
 
