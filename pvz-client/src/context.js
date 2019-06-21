@@ -29,21 +29,6 @@ class ProductProvider extends Component {
 		console.log('Hello from Add to Cart')
 	}
 
-	// renderPlant = ({ plantID, name, description, cost }) => (
-	// 	<div key={plantID}>
-	// 		{name}
-	// 		<br />
-	// 		{description}
-	// 		<br />
-	// 		{cost}
-	// 	</div>
-	// )
-
-	// plants.map(this.renderPlant)
-
-	// handleDetail: this.handleDetail,
-	// addToCart: this.addToCart
-
 	render() {
 		// const { plants } = this.state
 		// prettier-ignore
